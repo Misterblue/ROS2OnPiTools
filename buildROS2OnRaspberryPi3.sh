@@ -156,9 +156,7 @@ fi
 if [[ "$DoBuild" == "yes" ]] ; then
     echo "Doing ROS2 build"
     cd ~/ros2_ws
-    sudo src/ament/ament_tools/scripts/ament.py build --install-space /opt/ros2 -j 2
-    # the official instructions say to use colcon but I know the above works
-    # sudo colcon build --install-base /opt/ros2 -j 2
+    sudo colcon build --install-base /opt/ros2
 else
     echo "Not doing ROS2 build"
 fi
