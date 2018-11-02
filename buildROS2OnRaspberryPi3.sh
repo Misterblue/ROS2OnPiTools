@@ -131,12 +131,13 @@ if [[ "$DoFetchROS2Sources" == "yes" ]] ; then
     # set ROS_RELEASE to 'release-latest' for last release, or 'master' for the latest patches and tweeks
     # ROS_RELEASE=release-latest
     ROS_RELEASE=master
-    mkdir -p ~/ros2_ws/src
+    mkdir -p ~/ros2_ws
     cd ~/ros2_ws
-    if [[ "$DoCleanFetchROS2Sources" == "yes" || ! -e src ]] ; then
+    if [[ "$DoCleanFetchROS2Sources" == "yes" || ! -e "src/ros2" ]] ; then
         # If forcing a clean fetch or 'src' directory doesn't exist, fetch the sources
         echo "===    Clean fetch of ROS2 Sources"
         rm -rf src
+        mkdir src
         rm -f ros2.repos
         wget https://raw.githubusercontent.com/ros2/ros2/${ROS_RELEASE}/ros2.repos
         vcs import src < ros2.repos
