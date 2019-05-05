@@ -137,7 +137,6 @@ if [[ "$DoFetchROS2Sources" == "yes" ]] ; then
         # If forcing a clean fetch or 'src' directory doesn't exist, fetch the sources
         echo "===    Clean fetch of ROS2 Sources"
         rm -rf src
-        mkdir src
         rm -f ros2.repos
         wget https://raw.githubusercontent.com/ros2/ros2/${ROS_RELEASE}/ros2.repos
         mkdir src
